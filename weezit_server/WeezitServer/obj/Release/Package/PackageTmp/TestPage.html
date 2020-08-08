@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/ajaxCalls.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            InsertUser();
+        });
+        function InsertUser() { 
+            var user = {
+                'Id': 16,
+                'Name': 'MayTzur',
+                'Image': 'some image'
+            }
+
+            var obj = {
+                'ID': 33663,
+                'Name': 'Donald Trump',
+                'Image': `https://image.tmdb.org/t/p/w500/ejlZfKg3huNL9FuaoUDcewM27pv.jpg`,
+                'Biography': 'Donald John Trump was born on June 14, 1946 in New York City, New York, USA. He is the 45th President of the United States. He previously was a producer and actor, known for The Apprentice (2004), Two Weeks Notice (2002) and Comedy Central Roast of Donald Trump (2011). He has been married to Melania Trump since January 22, 2005. The couple has one child. He was previously married to Ivana Trump and Marla Maples.'
+            }
+            //ajaxCall('GET', '../api/User/Player/39', '', Success, Error);
+            ajaxCall('PUT', '../api/User/UpdateGameResult/39/false', '', Success, Error);
+            //ajaxCall('PUT', '../api/User/Player/', JSON.stringify(user), Success, Error);
+            //ajaxCall('DELETE', '../api/User/DeleteUserSearch/' + 1+ '/' + 84499, '', Success, Error);
+        }
+
+        function Success(data) { console.log(data) }
+        function Error(err) { console.log(err) }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
